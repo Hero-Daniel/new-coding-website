@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codecraft Courses</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav
+      class="flex flex-col md:flex-row items-center justify-between p-5 md:p-10 mx-10 bg-white"
+    >
+      <div class="flex justify-between items-center w-full pt-5 md:pt-0">
+        <h1
+          class="text-[#2563EB] text-3xl font-bold mb-4 md:mb-0 mx-5 justify-start absolute left-0"
+        >
+          CodeCraft Academy
+        </h1>
+        <span
+          class="text-3xl cursor-pointer md:hidden block mx-5 justify-end absolute right-0"
+        >
+          <ion-icon name="menu" id="menuIcon"></ion-icon>
+        </span>
+      </div>
+      <ul
+        class="ul md:flex md: items-center z-[-1] md:z-auto md:static absolute left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500"
+      >
+        <li class="mx-5 my-5">
+          <a href="index.html" class="hover:text-[#2563EB]">Home</a>
+        </li>
+        <li class="mx-5 my-5">
+          <a href="courses.html" class="hover:text-[#2563EB]">Courses</a>
+        </li>
+        <li class="mx-5 my-5">
+          <a href="about.html" class="hover:text-[#2563EB]">About</a>
+        </li>
+        <li class="mx-5 my-5">
+          <a href="#" class="hover:text-[#2563EB]">Testimonials</a>
+        </li>
+        <li class="mx-5 my-5">
+          <a href="#" class="hover:text-[#2563EB]">Blog</a>
+        </li>
+        <li class="mx-5 my-5">
+          <a href="#" class="hover:text-[#2563EB]">Events</a>
+        </li>
+        <li class="mx-5 my-5">
+          <a href="#" class="hover:text-[#2563EB]">Pricing</a>
+        </li>
+        <li class="mx-5 my-5">
+          <a href="#" class="hover:text-[#2563EB]">FAQ</a>
+        </li>
+        <li class="mx-5 my-5">
+          <a href="#" class="hover:text-[#2563EB]">Contact</a>
+        </li>
+        <button
+          class="bg-[#808080] px-5 py-2 rounded font-light cursor-pointer mx-5 my-5 login"
+        >
+          Login
+        </button>
+        <button
+          class="bg-[#2563EB] px-5 py-2 rounded text-[#fff] font-light cursor-pointer my-5 mx-3"
+        >
+          Apply
+        </button>
+      </ul>
+    </nav>
+
+    <section>
+      <div
+        class="bg-[url('/img/nikita-JzqqSAXYBL8-unsplash.jpg')] bg-cover bg-center h-150 w-full"
+      >
+        <h1 class="p-10 text-white font-medium text-3xl text-center md:px-100">
+          “Technology is a rapidly evolving industry with a strong and
+          sustainable future, The tech sector continues to drive innovation and
+          economic growth worldwide.”
+        </h1>
+      </div>
+    </section>
+
+    <section class="p-10 flex flex-col md:p-20">
+      <h1 class="text-center text-5xl font-semibold py-5">Our Courses</h1>
+      <div class="md:flex justify-between py-5">
+        <div class="flex items-center gap-5">
+          <input
+            type="text"
+            id="inputCourse"
+            placeholder=" Search courses..."
+            class="rounded-lg text-[#9b9aaa] py-3 sm:w-full md:w-140 bg-[#fff] border border-gray-500 pl-10"
+          />
+          <img
+            src="/assets/images/icon-search.svg"
+            class="absolute left-143 cursor-pointer"
+            alt=""
+          />
+        </div>
+        <div
+          class="gap-5 flex flex-wrap text-center my-5 md:flex md:gap-4 font-semibold"
+        >
+          <button class="cursor-pointer hover:text-[#2563EB]" id="all">
+            All
+          </button>
+          <button class="cursor-pointer hover:text-[#2563EB]" id="web-dev">
+            Web Development
+          </button>
+          <button class="cursor-pointer hover:text-[#2563EB]" id="mobile">
+            Mobile Development
+          </button>
+          <button class="cursor-pointer hover:text-[#2563EB]" id="data">
+            Data & AI
+          </button>
+          <button class="cursor-pointer hover:text-[#2563EB]" id="cloud">
+            Cloud & Infrastructure
+          </button>
+          <button class="cursor-pointer hover:text-[#2563EB]" id="design">
+            Design
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="course-container"
+        class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch"
+      ></div>
+
+      <div
+      id="myModal"
+      class="fixed inset-0 items-center justify-center hidden z-50 p-4 bg-black/60 backdrop-blur-sm"
+    >
+      <div class="relative bg-white rounded-2xl p-10 w-200">
+        <!-- Close button for the modal -->
+        <span
+          id="modalCloseBtn"
+          class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold cursor-pointer"
+          >&times;</span
+        >
+        <h2
+          class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight"
+        >
+          Ready to start?
+        </h2>
+        <p class="mt-4 text-gray-600 text-sm sm:text-base">
+          Join thousands of students learning
+          <span id="courseName" class="font-semibold text-indigo-600"
+            >this course</span
+          >. Sign in now to access your dashboard.
+        </p>
+
+        <!-- Authentication Form -->
+        <div class="mt-6">
+          <input
+            type="email"
+            id="authEmailInput"
+            placeholder="Email"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-3"
+            required
+          />
+          <input
+            type="password"
+            id="authPasswordInput"
+            placeholder="Password"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
+            required
+          />
+          <!-- Error display area -->
+          <p id="authErrorMessage" class="text-red-600 text-sm mb-4"></p>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button
+              id="modalSignInBtn"
+              class="flex-1 px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer"
+            >
+              Sign In
+            </button>
+            <button
+              id="modalSignUpBtn"
+              class="flex-1 px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-colors shadow-lg shadow-green-200 cursor-pointer"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+        <button
+          id="cancelBtn"
+          class="mt-4 w-full px-6 py-3 bg-gray-50 text-gray-700 font-bold rounded-xl hover:bg-gray-200 transition-colors cursor-pointer"
+        >
+          Later
+        </button>
+      </div>
+    </div>
+    </section>
+
+    <section></section>
+
+    <!-- footer-one -->
+    <section class="py-20 bg-[#2563EB] md:p-25 text-center flex flex-col gap-5">
+      <div>
+        <h1 class="font-bold text-4xl text-[#fff] py-4">
+          Ready to Start Your Tech Career?
+        </h1>
+        <p class="text-[#DBEAFE] text-xl">
+          Join our next cohort and transform your future in just 16 weeks.
+          Limited spots available!
+        </p>
+      </div>
+      <div
+        class="flex flex-col items-center md:flex md:flex-row md:justify-center gap-3 md:py-4"
+      >
+        <button
+          class="mx-5 font-bold text-lg bg-[#FACC15] text-[#111827] rounded py-5 px-27"
+        >
+          Apply Now - $500 Off
+        </button>
+        <button
+          class="font-bold text-lg py-5 px-34 text-[#fff] rounded border border-white-500"
+        >
+          Schedule a Call
+        </button>
+      </div>
+      <p class="text-[#BFDBFE] font-medium text-sm py-5">
+        Next cohort starts January 8, 2025
+      </p>
+    </section>
+    <!-- footer-two -->
+    <section class="py-15 md:py-20 px-5 bg-[#111827] md:p-20">
+      <div class="flex flex-col md:flex md:flex-row gap-5">
+        <div class="flex-1 flex gap-3 flex-col md:gap-5">
+          <h1 class="text-[#fff] font-bold text-3xl">CodeCraft Academy</h1>
+          <p class="text-[#9CA3AF]">
+            Transforming lives through code education and career development.
+          </p>
+          <div class="flex text-xl cursor-pointer gap-3">
+            <ion-icon name="logo-facebook" class="text-[#9CA3AF]"></ion-icon>
+            <ion-icon name="logo-twitter" class="text-[#9CA3AF]"></ion-icon>
+            <ion-icon name="logo-linkedin" class="text-[#9CA3AF]"></ion-icon>
+            <ion-icon name="logo-instagram" class="text-[#9CA3AF]"></ion-icon>
+          </div>
+        </div>
+
+        <div class="flex-1 flex gap-3 flex-col md:gap-5 pt-1">
+          <h1 class="text-[#fff] font-bold text-2xl">Program</h1>
+          <ul class="flex flex-col gap-2 md:flex md:flex-col md:gap-2">
+            <li class="text-[#9CA3AF]">
+              <a href="#">Full Stack Development</a>
+            </li>
+            <li class="text-[#9CA3AF]"><a href="#">Data Science</a></li>
+            <li class="text-[#9CA3AF]"><a href="#">Mobile Development</a></li>
+            <li class="text-[#9CA3AF]"><a href="#">UI/UX Design</a></li>
+          </ul>
+        </div>
+
+        <div class="flex-1 flex gap-3 flex-col md:gap-5 pt-1">
+          <h1 class="text-[#fff] font-bold text-2xl">Resources</h1>
+          <ul class="flex flex-col gap-2 md:flex md:flex-col gap-2">
+            <li class="text-[#9CA3AF]"><a href="#">Student DashBoard</a></li>
+            <li class="text-[#9CA3AF]"><a href="#">Blog</a></li>
+            <li class="text-[#9CA3AF]"><a href="#">Event</a></li>
+            <li class="text-[#9CA3AF]"><a href="#">FAQ</a></li>
+            <li class="text-[#9CA3AF]"><a href="#">Career Services</a></li>
+          </ul>
+        </div>
+        <div class="flex-1 flex gap-3 flex-col md:gap-5 pt-1">
+          <h1 class="text-[#fff] font-bold text-2xl">Contact</h1>
+          <div class="flex flex-col gap-2 md:flex md:flex-col md:gap-2">
+            <div class="flex md:flex gap-2">
+              <ion-icon
+                name="call-outline"
+                class="text-[#9CA3AF] text-xl cursor-pointer pt-1"
+              ></ion-icon>
+              <p class="text-[#9CA3AF]">(555)-123-4567</p>
+            </div>
+            <div class="flex md:flex gap-2">
+              <ion-icon
+                name="mail-outline"
+                class="text-[#9CA3AF] text-xl cursor-pointer pt-1"
+              ></ion-icon>
+              <p class="text-[#9CA3AF]">info@codecraft.edu</p>
+            </div>
+            <div class="flex md:flex gap-2">
+              <ion-icon
+                name="location-outline"
+                class="text-[#9CA3AF] text-xl cursor-pointer pt-1"
+              ></ion-icon>
+              <p class="text-[#9CA3AF]">123 Tech Street, San Francisco, CA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:flex md:flex-row justify-between pt-25 pr-26">
+        <p class="text-[#9CA3AF] text-center">
+          © 2024 CodeCraft Academy. All rights reserved.
+        </p>
+        <div class="md:justify-end">
+          <ul class="flex justify-center gap-10 md:flex md:gap-10">
+            <li class="text-[#9CA3AF]"><a href="#">Privacy Policy</a></li>
+            <li class="text-[#9CA3AF]"><a href="#">Terms of Service</a></li>
+            <li class="text-[#9CA3AF]"><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="courses.js"></script>
+  </body>
+</html>
