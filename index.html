@@ -14,7 +14,10 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <!-- navbar -->
@@ -22,20 +25,14 @@
       class="flex flex-col md:flex-row items-center justify-between p-5 md:p-10 mx-10 bg-white relative"
     >
       <div class="flex justify-between items-center w-full md:w-auto">
-        <h1
-          class="text-[#2563EB] text-3xl font-bold"
-        >
-          CodeCraft Academy
-        </h1>
-        <span
-          class="text-3xl cursor-pointer md:hidden block"
-        >
+        <h1 class="text-[#2563EB] text-3xl font-bold">CodeCraft Academy</h1>
+        <span class="text-3xl cursor-pointer md:hidden block">
           <ion-icon name="menu" id="menuIcon"></ion-icon>
         </span>
       </div>
-      <ul id="navMenu"
-        class ="hidden md:flex md:static absolute md:static left-0 top-[-400px] md:top-0 w-full md:w-auto
-                bg-white md:bg-transparent opacity-0 md:opacity-100 transition-all ease-in duration-500"
+      <ul
+        id="navMenu"
+        class="hidden md:flex md:static absolute md:static left-0 top-[-400px] md:top-0 w-full md:w-auto bg-white md:bg-transparent opacity-0 md:opacity-100 transition-all ease-in duration-500"
       >
         <li class="mx-5 my-5">
           <a href="index.html" class="hover:text-[#2563EB]">Home</a>
@@ -72,6 +69,7 @@
         </button>
         <button
           class="bg-[#2563EB] px-5 py-2 rounded text-[#fff] font-light cursor-pointer my-5 mx-3"
+          id="apply"
         >
           Apply
         </button>
@@ -91,16 +89,22 @@
           jobs. Our intensive bootcamp gets you job-ready in just 16 weeks.
         </p>
         <div class="flex flex-col md:flex-row gap-5">
-          <button
-            class="rounded cursor-pointer bg-[#FACC15] p-3 w-full text-[#111827] font-bold md:w-[25%]"
-          >
-            Start Your journey
-          </button>
-          <button
-            class="bg-[inherit] border-[#fff] cursor-pointer p-3 w-full text-[#fff] border-3 border-white-900 rounded font-bold md:w-[25%]"
-          >
+          <div class="text-center py-8">
+            <a
+              href="courses.html"
+              class="inline-block bg-[#FACC15] text-[#374151] font-bold text-base p-5 rounded cursor-pointer hover:bg-[#FBBF24] transition duration-300"
+            >
             View Courses
-          </button>
+            </a>
+          </div>
+          <div class="text-center py-8">
+            <a
+              href="courses.html"
+              class="inline-block bg-[inherit] border border-[#FFFFFF] text-[#FFF] font-bold text-base p-5 rounded cursor-pointer hover:bg-[#fff] hover:text-[#2563EB] transition duration-300"
+            >
+            Start Your journey
+            </a>
+          </div>
         </div>
         <div class="flex flex-row text-center gap-30 md:px-6">
           <div class="text-center">
@@ -132,7 +136,7 @@
       </button>
     </section>
     <!-- popular courses section -->
-    <section class="bg-[#FFFFFF] md:my-20 p-10">
+    <section>
       <div class="text-center py-20">
         <h1 class="text-[#111827] font-bold text-4xl">Popular Courses</h1>
         <p class="text-[#4B5563] font-medium text-lg md:px-120">
@@ -167,21 +171,66 @@
             <h1 class="text-[#111827] font-bold text-xl">
               Full Stack Web Development
             </h1>
-            <!-- aw do i get same output wit da of figma -->
             <p class="text-[#4B5563] font-medium">
               Master React, Node.js, MongoDB, and modern web technologies to
               build complete applications.
             </p>
             <div class="flex flex-row justify-between">
               <h1 class="text-[#2563EB] font-bold text-2xl pt-3">$12,999</h1>
+              <!-- explain dis part -->
               <button
-                class="bg-[#2563EB] text-[#FFFFFF] font-medium text-base p-3 rounded"
+                class="learn-more-btn bg-[#2563EB] text-[#FFFFFF] font-medium text-base p-3 rounded cursor-pointer"
+                type="submit"
+                data-modal="fullStackModal"
               >
+                <!-- y must my id below b d same as my data-modal above, give a reasonable explanation n y == bcoz data-modal represent d btn n it redirects to d modal -->
                 Learn More
               </button>
             </div>
           </div>
         </div>
+        <!-- modal for learning more on full stack -->
+        <div
+          class="modal fixed inset-0 items-center justify-center hidden z-50 p-4 bg-black/60 backdrop-blur-sm"
+          id="fullStackModal"
+        >
+          <div class="relative bg-white rounded-2xl p-10 w-200">
+            <span
+              class="closeBtn absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold cursor-pointer"
+              >&times;</span
+            >
+
+            <h2
+              class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight text-center"
+            >
+              Full Stack Web Development🌐🚀
+            </h2>
+
+            <p class="mt-4 mb-2 text-sm sm:text-base">
+              Learn how to build complete web applications from scratch using
+              modern tools and technologies In this session, you’ll learn how to
+              build modern web applications from scratch, combining both
+              front-end and back-end technologies. Master essential tools and
+              frameworks like HTML, CSS, JavaScript, Node.js, Express, and
+              MongoDB to create powerful, data-driven websites and apps.
+            </p>
+            <div class="space-y-3 mb-6">
+              <p>✔ Build responsive user interfaces</p>
+              <p>✔ Create powerful backend APIs</p>
+              <p>✔ Work with real-world databases</p>
+              <p>✔ Deploy full web applications</p>
+            </div>
+
+            <button
+              type="submit"
+              class="modalSignInBtn w-full px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+
+        <!-- Data Science & Analytics Section -->
         <div class="shadow-md rounded-lg overflow-hidden flex-1">
           <img
             class="w-full h-[50%] object-cover"
@@ -205,21 +254,62 @@
             <h1 class="text-[#111827] font-bold text-xl">
               Data Science & Analytics
             </h1>
-            <!-- aw do i get same output wit da of figma -->
             <p class="text-[#4B5563] font-medium">
               Learn Python, machine learning, and data visualization to become a
               data scientist.
             </p>
             <div class="flex flex-row justify-between">
               <h1 class="text-[#2563EB] font-bold text-2xl pt-3">$14,999</h1>
+              <!-- explain dis part data-modal in particular n y we're using it not an id -->
               <button
-                class="bg-[#2563EB] text-[#FFFFFF] font-medium text-base p-3 rounded"
+                class="learn-more-btn bg-[#2563EB] text-[#FFFFFF] font-medium text-base p-3 rounded cursor-pointer"
+                type="submit"
+                data-modal="dataScienceModal"
               >
                 Learn More
               </button>
             </div>
           </div>
         </div>
+        <!-- modal for Data Science & Analytics -->
+        <div
+          class="modal fixed inset-0 items-center justify-center hidden z-50 p-4 bg-black/60 backdrop-blur-sm"
+          id="dataScienceModal"
+        >
+          <div class="relative bg-white rounded-2xl p-10 w-200">
+            <span
+              class="closeBtn absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold cursor-pointer"
+              >&times;</span
+            >
+            <h2
+              class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight text-center"
+            >
+              Data Science & Analytics
+            </h2>
+
+            <p class="mt-4 mb-2 text-sm sm:text-base text-gray-600">
+              Learn how to turn raw data into meaningful insights using
+              real-world tools and techniques. In this session, you’ll explore
+              how data science is used to solve business problems, make
+              predictions, and drive decision-making using modern analytics
+              workflows.
+            </p>
+            <div class="space-y-3 mb-6 text-gray-700">
+              <p>✔ Analyze and visualize real-world datasets</p>
+              <p>✔ Build predictive machine learning models</p>
+              <p>✔ Work with Python, Pandas, and NumPy</p>
+              <p>✔ Understand data cleaning and preprocessing techniques</p>
+            </div>
+
+            <button
+              type="submit"
+              class="modalSignInBtn w-full px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Development Section -->
         <div class="shadow-md rounded-lg overflow-hidden flex-1">
           <img
             class="w-full h-[50%] object-cover"
@@ -243,7 +333,6 @@
             <h1 class="text-[#111827] font-bold text-xl">
               Mobile App Development
             </h1>
-            <!-- aw do i get same output wit da of figma -->
             <p class="text-[#4B5563] font-medium">
               Build iOS and Android apps using React Native and Flutter
               frameworks.
@@ -251,23 +340,63 @@
             <div class="flex flex-row justify-between">
               <h1 class="text-[#2563EB] font-bold text-2xl pt-3">$11,999</h1>
               <button
-                class="bg-[#2563EB] text-[#FFFFFF] font-medium text-base p-3 rounded cursor-pointer"
+                class="learn-more-btn bg-[#2563EB] text-[#FFFFFF] font-medium text-base p-3 rounded cursor-pointer"
+                data-modal="mobileDevModal"
               >
                 Learn More
               </button>
             </div>
           </div>
         </div>
-      <!-- </div>
-      <div class="text-center p-10">
-        <a href="courses.html"
-          class="item-center bg-[#F3F4F6] text-[#374151] font-bold text-base p-5 rounded cursor-pointer"
+        <!-- modal for Mobile Dev -->
+        <div
+          class="modal fixed inset-0 items-center justify-center hidden z-50 p-4 bg-black/60 backdrop-blur-sm"
+          id="mobileDevModal"
         >
-        <button>
-          View All Courses
-        </button>
-      </div> -->
+          <div class="relative bg-white rounded-2xl p-10 w-200">
+            <span
+              class="closeBtn absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold cursor-pointer"
+              >&times;</span
+            >
+
+            <h2
+              class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight text-center"
+            >
+            Mobile App Development
+            </h2>
+
+            <p class="mt-4 mb-2 text-sm sm:text-base text-gray-600">
+              Learn how to design and build powerful mobile applications for both Android and iOS.
+              In this session, you’ll understand how modern apps are built using cross-platform tools,
+              user-friendly interfaces, and real-world mobile development practices.
+            </p>
+            
+            <div class="space-y-3 mb-6 text-gray-700">
+              <p>✔ Build mobile apps for Android and iOS</p>
+              <p>✔ Use React Native or Flutter frameworks</p>
+              <p>✔ Design smooth and responsive UI screens</p>
+              <p>✔ Connect apps to APIs and backend services</p>
+            </div>
+            <button
+            type="submit"
+            class="modalSignInBtn w-full px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer"
+          >
+            Get Started
+          </button>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <div class="text-center p-10">
+      <a
+        href="courses.html"
+        class="inline-block bg-[#F3F4F6] text-[#374151] font-bold text-base p-5 rounded cursor-pointer hover:bg-gray-200 transition-colors"
+      >
+        View All Courses
+      </a>
+    </div>
+
     <!-- stories section -->
     <section class="bg-gray-100 relative p-15">
       <div class="text-center p-6">
@@ -278,9 +407,7 @@
       </div>
 
       <!-- Slider implementation goes here -->
-      <div
-        class="flex flex-col md:flex md:justify-center md:items-center"
-      >
+      <div class="flex flex-col md:flex md:justify-center md:items-center">
         <!-- Navigation outside the box -->
         <div
           class="swiper-btn-prev absolute left-10 top-1/2 -translate-y-1/2 bg-black/70 text-white px-4 py-2 rounded cursor-pointer z-20"
@@ -509,11 +636,14 @@
           <h1 class="font-bold text-2xl">Upcoming Events</h1>
           <p>Join our workshops, info sessions, and networking events</p>
         </div>
-        <button
-          class="p-4 bg-[#2563EB] text-[#FFFFFF] rounded font-medium text-base md:px-2"
-        >
+        <div class="text-center p-10">
+          <a
+            href="#"
+            class="inline-block bg-[#2563EB] text-[#FFFFFF] font-medium text-base p-5 rounded cursor-pointer transition-colors"
+          >
           View Calender
-        </button>
+          </a>
+        </div>
       </div>
       <div class="flex flex-col gap-5 md:flex md:flex-row md:gap-7 py-7">
         <div
@@ -597,7 +727,7 @@
       </div>
     </section>
     <!-- footer-one -->
-     <section class="py-20 bg-[#2563EB] md:p-25 text-center flex flex-col gap-5">
+    <section class="py-20 bg-[#2563EB] md:p-25 text-center flex flex-col gap-5">
       <div>
         <h1 class="font-bold text-4xl text-[#fff] py-4">
           Ready to Start Your Tech Career?
@@ -611,12 +741,12 @@
         class="flex flex-col items-center md:flex md:flex-row md:justify-center gap-3 md:py-4"
       >
         <button
-          class="mx-5 font-bold text-lg bg-[#FACC15] text-[#111827] rounded py-5 px-27"
+          class="mx-5 font-bold text-lg bg-[#FACC15] text-[#111827] rounded py-5 px-27 cursor-pointer hover:bg-[#FBBF24] transition duration-300"
         >
-          Apply Now - $500 Off
+          Apply Now
         </button>
         <button
-          class="font-bold text-lg py-5 px-34 text-[#fff] rounded border border-white-500"
+          class="font-bold text-lg py-5 px-27 text-[#fff] rounded border border-white-500 cursor-pointer hover:bg-[#fff] hover:text-[#2563EB] transition duration-300"
         >
           Schedule a Call
         </button>
@@ -624,9 +754,9 @@
       <p class="text-[#BFDBFE] font-medium text-sm py-5">
         Next cohort starts January 8, 2025
       </p>
-    </section> 
+    </section>
     <!-- footer-two -->
-   <section class="py-15 md:py-20 px-5 bg-[#111827] md:p-20">
+    <section class="py-15 md:py-20 px-5 bg-[#111827] md:p-20">
       <div class="flex flex-col md:flex md:flex-row gap-5">
         <div class="flex-1 flex gap-3 flex-col md:gap-5">
           <h1 class="text-[#fff] font-bold text-3xl">CodeCraft Academy</h1>
@@ -703,7 +833,9 @@
           </ul>
         </div>
       </div>
-    </section> 
+    </section>
+
+  <!-- modal session -->
 
     <section>
       <div
@@ -716,15 +848,84 @@
             class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold cursor-pointer"
             >&times;</span
           >
-          
+
           <h2
             class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight"
           >
             Ready to start?
           </h2>
-          
+
           <p class="mt-4 text-gray-600 text-sm sm:text-base">
-            Join thousands of students learning. Sign in now to access your dashboard.
+            Join thousands of students learning. Sign in now to access your
+            dashboard.
+          </p>
+
+          <div class="mt-6">
+            <input
+              type="email"
+              id="signInEmail"
+              placeholder="Email"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-3"
+              required
+            />
+            <input
+              type="password"
+              id="signInPassword"
+              placeholder="Password"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
+              required
+            />
+            <img
+              src="/img/eye.svg"
+              alt=""
+              class="absolute top-1/2 w-6 h-6 cursor-pointer"
+              style="right: 3.25rem; top: 52%"
+              id="signEyeIcon"
+            />
+            <!-- Error display area -->
+            <p id="authErrorMessage" class="text-red-600 text-sm mb-4"></p>
+
+            <button
+              type="submit"
+              class="modalSignInBtn w-full px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer"
+            >
+              Sign In
+            </button>
+
+            <span class="block text-center text-sm text-gray-500 pt-5"
+              >Don't av an account?
+              <a
+                href="#"
+                type="button"
+                class="openNewModal"
+                class="text-blue-600 font-medium over:text-blue-700 hover:underline transition"
+                >Sign up</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="signupModal"
+        class="fixed inset-0 flex items-center justify-center hidden z-50 p-4 bg-black/60 backdrop-blur-sm"
+      >
+        <div class="relative bg-white rounded-2xl p-10 w-200">
+          <span
+            id="xBtn"
+            class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold cursor-pointer"
+            >&times;</span
+          >
+
+          <h2
+            class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight"
+          >
+            Ready to start?
+          </h2>
+
+          <p class="mt-4 text-gray-600 text-sm sm:text-base">
+            Join thousands of students learning. Sign up now to access your
+            dashboard.
           </p>
 
           <div class="mt-6">
@@ -732,7 +933,7 @@
               type="email"
               id="authEmailInput"
               placeholder="Email"
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-3"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-3 rel"
               required
             />
             <input
@@ -742,88 +943,53 @@
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
               required
             />
+            <img
+              src="/img/eye.svg"
+              alt=""
+              class="absolute top-1/2 w-6 h-6 cursor-pointer"
+              style="right: 3.25rem; top: 47%"
+              id="eyeIcon"
+            />
+            <input
+              type="password"
+              id="confirmedPassword"
+              placeholder="Confirm-Password"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
+              required
+            />
+            <img
+              src="/img/eye.svg"
+              alt=""
+              class="absolute top-1/2 w-6 h-6 cursor-pointer"
+              style="right: 3.25rem; top: 60%"
+              id="eyeIcon2"
+            />
+
             <!-- Error display area -->
-            <p id="authErrorMessage" class="text-red-600 text-sm mb-4"></p>
-  
-              <button
-                id="modalSignInBtn"
-                class="w-full px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer"
-              >
-                Sign In
-              </button>
+            <p id="auth-message" class="text-sm text-red-500 mt-2"></p>
 
-              <span class="text-center">Don't av an account?</span>
-
-              <button
+            <button
               id="modalSignUpBtn"
+              type="submit"
               class="w-full px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-colors shadow-lg shadow-green-200 cursor-pointer"
             >
               Sign Up
             </button>
+            <span class="block text-center text-sm text-gray-500 pt-5"
+              >Already have an account?
+              <a
+                href="#"
+                id="backToLogin"
+                class="text-blue-600 font-medium over:text-blue-700 hover:underline transition"
+                >Sign In</a
+              ></span
+            >
           </div>
         </div>
       </div>
-
-
-
-
-      <div
-      id="signupModal"
-      class="fixed inset-0 items-center justify-center hidden z-50 p-4 bg-black/60 backdrop-blur-sm"
-    >
-      <div class="relative bg-white rounded-2xl p-10 w-200">
-        <span
-          id="modalCloseBtn"
-          class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold cursor-pointer"
-          >&times;</span
-        >
-        
-        <h2
-          class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight"
-        >
-          Ready to start?
-        </h2>
-        
-        <p class="mt-4 text-gray-600 text-sm sm:text-base">
-          Join thousands of students learning. Sign up now to access your dashboard.
-        </p>
-
-        <div class="mt-6">
-          <input
-            type="email"
-            id="authEmailInput"
-            placeholder="Email"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-3"
-            required
-          />
-          <input
-            type="password"
-            id="authPasswordInput"
-            placeholder="Password"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
-            required
-          />
-          <!-- Error display area -->
-          <p id="authErrorMessage" class="text-red-600 text-sm mb-4"></p>
-
-            <span class="text-center">Don't av an account?</span>
-
-            <button
-            id="modalSignUpBtn"
-            class="w-full px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-colors shadow-lg shadow-green-200 cursor-pointer"
-          >
-            Sign Up
-          </button>
-        </div>
-      </div>
-    </div>
-
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="script.js"></script>
-</body>
+  </body>
 </html>
-
-
-

@@ -72,8 +72,9 @@
     </nav>
 
     <section>
+      <!-- bg-[url('/img/nikita-JzqqSAXYBL8-unsplash.jpg')] bg-cover bg-center -->
       <div
-        class="bg-[url('/img/nikita-JzqqSAXYBL8-unsplash.jpg')] bg-cover bg-center h-150 w-full"
+        class="bg-black h-150 w-full"
       >
         <h1 class="p-10 text-white font-medium text-3xl text-center md:px-100">
           “Technology is a rapidly evolving industry with a strong and
@@ -128,74 +129,22 @@
         class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 items-stretch"
       ></div>
 
-      <div
-      id="myModal"
-      class="fixed inset-0 items-center justify-center hidden z-50 p-4 bg-black/60 backdrop-blur-sm"
-    >
-      <div class="relative bg-white rounded-2xl p-10 w-200">
-        <!-- Close button for the modal -->
-        <span
-          id="modalCloseBtn"
-          class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-3xl font-bold cursor-pointer"
-          >&times;</span
-        >
-        <h2
-          class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight"
-        >
-          Ready to start?
-        </h2>
-        <p class="mt-4 text-gray-600 text-sm sm:text-base">
-          Join thousands of students learning
-          <span id="courseName" class="font-semibold text-indigo-600"
-            >this course</span
-          >. Sign in now to access your dashboard.
-        </p>
-
-        <!-- Authentication Form -->
-        <div class="mt-6">
-          <input
-            type="email"
-            id="authEmailInput"
-            placeholder="Email"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-3"
-            required
-          />
-          <input
-            type="password"
-            id="authPasswordInput"
-            placeholder="Password"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 mb-4"
-            required
-          />
-          <!-- Error display area -->
-          <p id="authErrorMessage" class="text-red-600 text-sm mb-4"></p>
-
-          <div class="flex flex-col sm:flex-row gap-3">
-            <button
-              id="modalSignInBtn"
-              class="flex-1 px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer"
-            >
-              Sign In
+      <div id="courseModal" class="fixed inset-0 flex items-center justify-center hidden z-50 p-4 bg-black/60 backdrop-blur-sm">
+        <div class="relative bg-white rounded-2xl p-10 w-200">
+          <span id="closeModal" class="absolute top-4 right-4 text-3xl cursor-pointer">&times;</span>
+          <h2 id="modalTitle" class="text-2xl font-bold text-center"></h2>
+          <p id="modalDescription" class="mt-4 text-gray-600"></p>
+          <div id="modalPoints" class="space-y-2 mt-4"></div>
+          <a id="modalLink" target="_blank">
+            <button class="w-full mt-6 bg-indigo-600 text-white py-3 rounded-xl cursor-pointer">
+              Start Learning
             </button>
-            <button
-              id="modalSignUpBtn"
-              class="flex-1 px-6 py-3 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-colors shadow-lg shadow-green-200 cursor-pointer"
-            >
-              Sign Up
-            </button>
-          </div>
+          </a>
         </div>
-        <button
-          id="cancelBtn"
-          class="mt-4 w-full px-6 py-3 bg-gray-50 text-gray-700 font-bold rounded-xl hover:bg-gray-200 transition-colors cursor-pointer"
-        >
-          Later
-        </button>
       </div>
-    </div>
     </section>
 
-    <section></section>
+     
 
     <!-- footer-one -->
     <section class="py-20 bg-[#2563EB] md:p-25 text-center flex flex-col gap-5">
@@ -212,12 +161,12 @@
         class="flex flex-col items-center md:flex md:flex-row md:justify-center gap-3 md:py-4"
       >
         <button
-          class="mx-5 font-bold text-lg bg-[#FACC15] text-[#111827] rounded py-5 px-27"
+          class="mx-5 font-bold text-lg bg-[#FACC15] text-[#111827] rounded py-5 px-27 cursor-pointer hover:bg-[#FBBF24] transition duration-300"
         >
-          Apply Now - $500 Off
+          Apply Now
         </button>
         <button
-          class="font-bold text-lg py-5 px-34 text-[#fff] rounded border border-white-500"
+          class="font-bold text-lg py-5 px-27 text-[#fff] rounded border border-white-500 cursor-pointer hover:bg-[#fff] hover:text-[#2563EB] transition duration-300"
         >
           Schedule a Call
         </button>
@@ -309,3 +258,7 @@
     <script type="module" src="courses.js"></script>
   </body>
 </html>
+
+
+
+
