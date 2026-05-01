@@ -13,10 +13,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
   </head>
   <body class="text-gray-700 fo">
     <!-- navbar -->
@@ -46,7 +42,7 @@
           <a href="#" class="hover:text-[#2563EB]">Testimonials</a>
         </li>
         <li class="mx-5 my-5">
-          <a href="#" class="hover:text-[#2563EB]">Blog</a>
+          <a href="blog.html" class="hover:text-[#2563EB]">Blog</a>
         </li>
         <li class="mx-5 my-5">
           <a href="#" class="hover:text-[#2563EB]">Events</a>
@@ -76,18 +72,21 @@
     <div
       class="bg-[url('/img/pexels-cottonbro-5483071.jpg')] bg-cover bg-center h-180 w-full text-white text-center p-10 md:px-100 flex flex-col justify-center items-center gap-15 py-24 px-6"
     >
-      <h1 class="font-bold text-[2.25rem]">
+      <h1 class="text-[#fff] text-5xl font-bold">
         “Learn to Code, Build Your Future”
       </h1>
-      <p class="text-[1.125rem]">
+      <p class="text-[#ffff] text-lg font-light ">
         Impowering to become a developer through hands on projects and tutorials
       </p>
 
-      <button
-        class="bg-yellow-400 hover:bg-yellow-300 border-none cursor-pointer rounded p-2"
-      >
+      <div class="text-center">
+        <a
+          href="courses.html"
+          class="inline-block bg-[#FACC15] text-[#374151] font-bold text-base px-10 py-4 rounded cursor-pointer hover:bg-[#FBBF24] transition duration-300"
+        >
         Get Started
-      </button>
+        </a>
+      </div>
     </div>
     <section class="p-10">
       <h1 class="text-center text-3xl font-semibold py-10">Our Mission</h1>
@@ -117,19 +116,56 @@
     <section class="bg-gray-200 p-10">
       <h1 class="text-center text-3xl font-semibold py-10">What We Offer</h1>
       
-      <div class="flex flex-col md:flex-row gap-8 md:gap-12">
-        <div class="bg-[#FFF] flex-1 ">
-          <img src="img/data-science.jpg" alt="" srcset="" class="w-50 "/>
-          <h2>Interactive Courses</h2>
-          <p>Learn the tech skills through step by step tutorials</p>
+      <div class="flex flex-col md:flex-row gap-8 md:gap-30 mb-4">
+        <div class="bg-[#FFF] flex-1 flex flex-col items-center text-center shadow-md rounded-2xl overflow-hidden p-7 gap-5">
+          <img src="img/data-science.jpg" alt="" class="w-50"/>
+          <h2 class="text-2xl font-semibold">Interactive Courses</h2>
+          <p class="">Learn the latest tech skills through step by step tutorials</p>
         </div>
 
-        <div class="bg-[#FFF] flex-1">
-
+        <div class="bg-[#FFF] flex-1 flex flex-col items-center text-center shadow-md rounded-2xl overflow-hidden p-7 gap-5">
+          <img src="img/data-science.jpg" alt="" class="w-50"/>
+          <h2 class="text-2xl font-semibold">Interactive Courses</h2>
+          <p class="">Learn the latest tech skills through step by step tutorials</p>
         </div>
-        <div class="bg-[#FFF] flex-1">
-
+        <div class="bg-[#FFF] flex-1 flex flex-col items-center text-center shadow-md rounded-2xl overflow-hidden p-7 gap-5">
+          <img src="img/data-science.jpg" alt="" class="w-50"/>
+          <h2 class="text-2xl font-semibold">Interactive Courses</h2>
+          <p class="">Learn the latest tech skills through step by step tutorials</p>
         </div>
+      </div>
+    </section>
+    <section class="py-16 px-4">
+      <h1 class="text-4xl font-bold text-center mb-12">Meet The Team</h1>
+      
+      <div class="flex flex-col md:flex-row justify-center items-center gap-8 max-w-6xl mx-auto">
+        
+        <div class="bg-gray-200 flex-1 max-w-sm flex flex-col items-center text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+          <img src="img/data-science.jpg" alt="Lead Instructor" class="w-40 h-40 rounded-full object-cover mb-4"/>
+          <h2 class="text-2xl font-bold text-gray-800">Lead Instructor</h2>
+          <p class="text-lg font-semibold mt-1">Wizdom Osuji</p>
+          <p class="text-gray-500 mt-2">Expert in Data Science & AI</p>
+        </div>
+        
+        <div class="bg-gray-200 flex-1 max-w-sm flex flex-col items-center text-center p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+          <img src="img/data-science.jpg" alt="Lead Instructor" class="w-40 h-40 rounded-full object-cover mb-4"/>
+          <h2 class="text-2xl font-bold text-gray-800">Lead Instructor</h2>
+          <p class="text-lg font-semibold mt-1">Wizdom Osuji</p>
+          <p class="text-gray-500 mt-2">Expert in Data Science & AI</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="bg-black items-center text-center p-10 flex flex-col gap-10">
+      <h1 class="text-[#fff] text-4xl font-bold">Ready to Start Learning?</h1>
+      <p class="text-[#ffff] text-lg font-light mt-1">Join us today and build your coding skills!</p>
+      <div class="text-center">
+        <a
+          href="courses.html"
+          class="inline-block bg-[#FACC15] text-[#374151] font-bold text-base px-10 py-4 rounded cursor-pointer hover:bg-[#FBBF24] transition duration-300"
+        >
+        Explore Courses
+        </a>
       </div>
     </section>
   </body>
