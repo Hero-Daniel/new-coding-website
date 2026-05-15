@@ -334,6 +334,8 @@ function debounce(callback, delay) {
 
 input.addEventListener("input", debounce(handleSearch, 300));
 
+// better wat to go abt
+
 const btnAll = document.getElementById("all");
 const btnWeb = document.getElementById("web-dev");
 const btnMobile = document.getElementById("mobile");
@@ -389,6 +391,7 @@ container.addEventListener("click", (e) => {
   if (!btn) return;
   const courseId = Number(btn.dataset.id);
   const selectedCourse = courses.find((course) => course.id === courseId);
+  console.log(selectedCourse)
 
   if (!selectedCourse) return;
 
@@ -396,9 +399,7 @@ container.addEventListener("click", (e) => {
   modalDescription.textContent = selectedCourse.description;
 
   // Use optional chaining (?.) and nullish coalescing (??) explain dis part and y its necessary
-  modalPoints.innerHTML = selectedCourse.points
-    ? selectedCourse.points.map((p) => `<p>✔ ${p}</p>`).join("")
-    : "<p>No details available</p>";
+  modalPoints.innerHTML = selectedCourse.points ? selectedCourse.points.map((p) => `<p>✔ ${p}</p>`).join("") : "<p>No details available</p>";
 
   modalLink.href = selectedCourse.link || "#";
 
